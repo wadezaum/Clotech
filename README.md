@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOTECH - Inovação em Tecnologia</title>
+    <!-- Inclui o Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link para a fonte Poppins do Google Fonts (mais próxima do design do Canva) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Inclui a biblioteca Lucide Icons via CDN para ícones mais próximos do estilo do Canva -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Configuração do Tailwind para usar a fonte Poppins e cores personalizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'], /* Alterado para Poppins */
+                    },
+                    colors: {
+                        primary: '#1A202C', // Cor principal escura (quase preta)
+                        secondary: '#4A5568', // Cor secundária para textos
+                        accent: '#3182CE', // Azul para botões e destaques (similar ao do Canva)
+                        lightGray: '#F7FAFC', // Cinza claro para seções de fundo
+                        darkGray: '#2D3748', // Cinza escuro para footer
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para garantir que as imagens de fundo cubram a seção */
+        .bg-cover-center {
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-2xl font-bold text-primary">CLOTECH</div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="#home" class="text-secondary hover:text-accent font-medium transition duration-300">Home</a>
+            <a href="#sobre" class="text-secondary hover:text-accent font-medium transition duration-300">Sobre</a>
+            <a href="#servicos" class="text-secondary hover:text-accent font-medium transition duration-300">Serviços</a>
+            <a href="#contato" class="text-secondary hover:text-accent font-medium transition duration-300">Contato</a>
+        </nav>
+        <!-- Menu Hamburger para mobile -->
+        <button id="mobile-menu-button" class="md:hidden text-secondary focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <nav id="mobile-menu" class="md:hidden bg-white shadow-lg py-4 px-6 absolute w-full z-10 hidden">
+        <a href="#home" class="block py-2 text-secondary hover:text-accent font-medium transition duration-300 border-b border-gray-100">Home</a>
+        <a href="#sobre" class="block py-2 text-secondary hover:text-accent font-medium transition duration-300 border-b border-gray-100">Sobre</a>
+        <a href="#servicos" class="block py-2 text-secondary hover:text-accent font-medium transition duration-300 border-b border-gray-100">Serviços</a>
+        <a href="#contato" class="block py-2 text-secondary hover:text-accent font-medium transition duration-300">Contato</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-cover-center bg-gray-700 text-white py-24 md:py-48 flex items-center justify-center text-center rounded-b-lg overflow-hidden"
+        style="background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Fundo+Hero+CLOTECH');">
+        <div class="absolute inset-0 bg-black opacity-50 rounded-b-lg"></div>
+        <div class="relative z-10 max-w-4xl px-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                INOVAÇÃO E TECNOLOGIA PARA O SEU NEGÓCIO
+            </h1>
+            <p class="text-lg md:text-xl mb-8 drop-shadow-md">
+                Soluções inteligentes que impulsionam o seu sucesso.
+            </p>
+            <a href="#contato" class="inline-block bg-accent text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                SAIBA MAIS
+            </a>
+        </div>
+    </section>
+
+    <!-- Sobre Nós Section -->
+    <section id="sobre" class="py-16 md:py-24 bg-lightGray rounded-lg mx-4 md:mx-8 -mt-12 relative z-20 shadow-lg">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row-reverse items-center justify-center gap-12"> <!-- Alterado para flex-row-reverse -->
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-4xl font-bold text-primary mb-6">Sobre Nós</h2>
+                <p class="text-lg text-secondary leading-relaxed">
+                    Na CLOTECH, somos apaixonados por tecnologia e inovação. Nossa missão é oferecer soluções digitais de ponta que transformam negócios e impulsionam o crescimento. Com uma equipe de especialistas dedicados, combinamos criatividade e expertise técnica para superar as expectativas de nossos clientes. Acreditamos que a tecnologia é a chave para um futuro mais eficiente e conectado.
+                </p>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://placehold.co/600x400/3182CE/FFFFFF?text=Imagem+Sobre+Nos" alt="Equipe CLOTECH" class="rounded-lg shadow-xl max-w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossos Serviços Section -->
+    <section id="servicos" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-primary mb-12">Nossos Serviços</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Serviço 1: Desenvolvimento Web -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-accent mb-4">
+                        <i data-lucide="code" class="w-16 h-16 mx-auto"></i> <!-- Ícone Lucide -->
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Desenvolvimento Web</h3>
+                    <p class="text-secondary">Criação de sites modernos, responsivos e otimizados para oferecer a melhor experiência ao usuário e alcançar seus objetivos de negócio.</p>
+                </div>
+                <!-- Serviço 2: Aplicativos Mobile -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-accent mb-4">
+                        <i data-lucide="smartphone" class="w-16 h-16 mx-auto"></i> <!-- Ícone Lucide -->
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Aplicativos Mobile</h3>
+                    <p class="text-secondary">Desenvolvimento de aplicativos nativos e híbridos para iOS e Android, garantindo performance e usabilidade excepcionais.</p>
+                </div>
+                <!-- Serviço 3: Consultoria em TI -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-accent mb-4">
+                        <i data-lucide="lightbulb" class="w-16 h-16 mx-auto"></i> <!-- Ícone Lucide -->
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Consultoria em TI</h3>
+                    <p class="text-secondary">Orientação estratégica para otimizar seus processos, implementar novas tecnologias e garantir a segurança dos seus dados.</p>
+                </div>
+                <!-- Serviço 4: Marketing Digital -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-accent mb-4">
+                        <i data-lucide="trending-up" class="w-16 h-16 mx-auto"></i> <!-- Ícone Lucide -->
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Marketing Digital</h3>
+                    <p class="text-secondary">Estratégias completas de SEO, SEM, mídias sociais e conteúdo para aumentar sua visibilidade e atrair mais clientes.</p>
+                </div>
+                <!-- Serviço 5: Design UX/UI -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-accent mb-4">
+                        <i data-lucide="layout" class="w-16 h-16 mx-auto"></i> <!-- Ícone Lucide -->
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Design UX/UI</h3>
+                    <p class="text-secondary">Criação de interfaces intuitivas e experiências de usuário envolventes que garantem satisfação e engajamento.</p>
+                </div>
+                <!-- Serviço 6: Segurança da Informação -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="text-accent mb-4">
+                        <i data-lucide="shield" class="w-16 h-16 mx-auto"></i> <!-- Ícone Lucide -->
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Segurança da Informação</h3>
+                    <p class="text-secondary">Proteção completa dos seus dados e sistemas contra ameaças cibernéticas, garantindo a integridade e confidencialidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section class="py-16 md:py-24 bg-lightGray">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-primary mb-12">O que nossos clientes dizem</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <p class="text-lg italic text-secondary mb-4">"A CLOTECH superou nossas expectativas! O site ficou incrível e o suporte foi impecável. Recomendo a todos!"</p>
+                    <p class="font-semibold text-primary">- Ana Paula, CEO da InovaLabs</p>
+                </div>
+                <!-- Depoimento 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <p class="text-lg italic text-secondary mb-4">"Profissionais altamente qualificados. Nosso aplicativo mobile transformou a forma como interagimos com nossos clientes."</p>
+                    <p class="font-semibold text-primary">- João Silva, Diretor de Marketing da Connect Solutions</p>
+                </div>
+                <!-- Depoimento 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <p class="text-lg italic text-secondary mb-4">"A consultoria em TI da CLOTECH foi fundamental para otimizar nossos processos e aumentar a segurança dos nossos dados."</p>
+                    <p class="font-semibold text-primary">- Mariana Costa, Gerente de Projetos da Tech Insights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entre em Contato Section -->
+    <section id="contato" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-primary mb-12">Entre em Contato</h2>
+            <div class="max-w-3xl mx-auto bg-lightGray p-8 rounded-lg shadow-lg">
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" id="name" name="name" placeholder="Seu Nome" class="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" required>
+                    </div>
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="Seu Email" class="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" required>
+                    </div>
+                    <div>
+                        <textarea id="message" name="message" rows="6" placeholder="Sua Mensagem" class="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-accent text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                        ENVIAR MENSAGEM
+                    </button>
+                </form>
+                <div class="mt-12 text-secondary text-lg space-y-4">
+                    <p class="flex items-center justify-center md:justify-start">
+                        <i data-lucide="phone" class="w-6 h-6 mr-3 text-accent"></i> <!-- Ícone Lucide -->
+                        (11) 98765-4321
+                    </p>
+                    <p class="flex items-center justify-center md:justify-start">
+                        <i data-lucide="mail" class="w-6 h-6 mr-3 text-accent"></i> <!-- Ícone Lucide -->
+                        contato@clotech.com
+                    </p>
+                    <p class="flex items-center justify-center md:justify-start">
+                        <i data-lucide="map-pin" class="w-6 h-6 mr-3 text-accent"></i> <!-- Ícone Lucide -->
+                        Rua da Inovação, 123 - São Paulo, SP
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkGray text-white py-8 text-center rounded-t-lg">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2023 CLOTECH. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para o menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar o menu mobile ao clicar em um link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Inicializa os ícones Lucide após o carregamento do DOM
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
